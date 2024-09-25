@@ -1,2 +1,2 @@
-# redesigned-train
-uma pagina estatica, que calcula seu IMC,
+# Calculadora IMC
+uma pagina estatica, que calcula seu IMC
