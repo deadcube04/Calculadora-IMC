@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+
+    --tt-heading: #0c3440;
+    --tt-label: #00453a;
+    --tt-input: #212529;
+    --ot-input: #02799d;
+    --bd-input: #0c3440;
+    --tt-placeholder: rgba(73, 80, 87, 0.3);
+    --tt-button: rgba(73, 80, 87, 0.5);
+    --bg-button: #02799d;
+    --bg-error: #f03e3e;
+    --bg-input: #dce2e9;
+    --tt-error: white;
+}
+body{
+    background-color: #040924;
+    font-size: 1.6rem;
+}
+
+input, button{
+    font-size: 16px;
+    line-height: 20px;
+}
+.card{
+    padding:  48px 64px 64px;
+    background-color: white;
+    max-width: 428px;
+    margin-inline: auto;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    place-content:center;
+}
+
+.title{
+    font-size: 32px;
+    line-height: 40px;
+}
+form h1{
+    margin-bottom: 32px;
+    color: var(--tt-heading);
+}
+
+form input{
+    width: 100%;
+    border:1px solid var(--bd-input);
+    background-color: var(--bg-input);
+    padding: 16px;
+    border-radius: 4px;
+}
+form label{
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--tt-label);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-wapper + .input-wapper{
+    margin-top: 16px;
+}
+
+form button{
+    margin-top: 32px;
+    padding: 16px;
+    width: 100%;
+
+    border: none;
+    background-color: var(--bg-button);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-size: bold;
+    font-weight: 16px;
+    line-height:20px ;
+
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover{
+    color: #01f7ce;
+    background-color: #026381;
+}
+form{
+    width: 300px;
+}
+
+form input:focus{
+    outline: 2px solid var(--ot-input);
+    }
+
+form input::placeholder{
+    color: var(--tt-placeholder);
+}
+
+.modal-wrapper{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    inset: 0;
+
+    display: grid;
+    place-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-wrapper.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal button{
+    border: none;
+    background: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+
+    transition: transform .3s;
+}
+
+.modal button:hover{
+    transform: scale(1.5);
+}
+.modal{
+    position: relative;
+}
+
+.alert-error {
+    position: absolute;
+    background-color: var(--bg-error);
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    text-align: center;
+    color: var(--tt-error);
+    padding: 8px 0;
+    font-weight: bold;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+}
+
+.alert-error.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s;
+}
